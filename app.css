@@ -1,0 +1,15 @@
+body{
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+#mainTitle{
+    align-self: center;
+
+}
+
+#menuIcon{
+    cursor: pointer;
+}
