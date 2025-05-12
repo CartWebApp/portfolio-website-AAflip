@@ -3,6 +3,8 @@ body{
     margin: 0;
     display: flex;
     flex-direction: column;
+    /* background-color: #01e9f8; */
+    align-items: center;
 }
 
 #mainTitle{
@@ -12,4 +14,31 @@ body{
 
 #menuIcon{
     cursor: pointer;
+}
+
+hr{
+    width: 98vw
+}
+
+.portCard{
+    border: 2px solid black;
+    display: flex;
+    width: 50vw;
+    height: 30vh;
+    margin: 1.5em;
+}
+
+.portCard > div{
+    display: flex;
+    flex-direction: column;
+}
+
+.portCard img{
+    width: 25vw;
+    /* height: 30vh/; */
+}
+
+a{
+    text-decoration: none;
+    color: black;
 }
