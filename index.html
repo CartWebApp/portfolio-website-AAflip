@@ -11,54 +11,67 @@
 </head>
 
 <body>
-    <!-- <nav>
-        <svg id="menuIcon" width="50" height="50">
-            <rect x="10" y="10" width="35" height="5" fill="black"></rect>
-            <rect x="10" y="20" width="35" height="5" fill="black"></rect>
-            <rect x="10" y="30" width="35" height="5" fill="black"></rect>
-        </svg>
-        <input type="checkbox">
-    </nav> -->
+    <nav>
+        <article id="navCheck">
+            <svg id="menuIcon" width="50" height="50">
+                <rect x="10" y="10" width="35" height="5" fill="black"></rect>
+                <rect x="10" y="20" width="35" height="5" fill="black"></rect>
+                <rect x="10" y="30" width="35" height="5" fill="black"></rect>
+            </svg>
+            <input type="checkbox" id="menuCheck">
+        </article>
+        <article id="navigation">
+            <img id="logo" src="/images/logo.png" alt="My Logo">
+            <div id="pages">
+                <a href="/index.html"><img src="/images/home.png" alt="Home logo">Home</a>
+                <a href="/pages/aboutme.html"><img src="/images/me.png" alt="Person logo">About Me</a>
+                <a href="/pages/resume.html"><img src="/images/resumelogo.png" alt="Resume Logo">My Resume</a>
+                <a href="/pages/portfolio.html"><img src="/images/codelogo.png" alt="Programming Logo">My Projects</a>
+                <a href="/pages/contact.html"><img src="/images/mail.png" alt="Mail logo">Contact Me</a>
+            </div>
+            <div id="links">
+                <a href="https://github.com/AAflip"><img src="/images/github.png" alt="Github Logo">Github</a>
+                <a href=""><img src="/images/linkedin.png" id="linkedin" alt="LinkedIn logo">Linkedin</a>
+            </div>
+        </article>
+    </nav>
     <h1 id="mainTitle">David J. Madden</h1>
-    <!-- <p>Hello, I am David Madden. I’m currently studying to become a computer programmer at the Center for Advanced Research and Technology (CART). I have a couple of years of experience programming and working on a team, and would love to work on any project that comes my way.</p>
-    <h2>Tech I have experience with:</h2>
-    <h4>Javascript</h4>
-    <h4>Java</h4>
-    <h4>C#</h4>
-    <h4>Python</h4> -->
-    <article>
+    <article id="mainPage">
         <!-- <h2 id="pagesTitle">Pages:</h2> -->
         <div class="pageLink">
-            <img src="" alt="">
+            <img src="/images/aboutme.jpg" alt="Text saying about me">
             <a href="/pages/aboutme.html">
                 <h3>About Me:</h3>
                 <p>This page is a general overview of who i am and what I am capable of</p>
             </a>
         </div>
         <div class="pageLink">
+            <img src="images/resume.webp" alt="Image of a cartoon bubble guy standing next to a laptop that says jobs">
             <a href="/pages/resume.html">
                 <h3>Resume:</h3>
                 <p>This page holds my resume for anyone who may want to employ me</p>
             </a>
-            <img src="" alt="">
         </div>
         <div class="pageLink">
-            <img src="" alt="">
+            <img src="/images/portfolio.jpg" alt="Image of a portfolio">
             <a href="/pages/portfolio.html">
                 <h3>Portfolio:</h3>
                 <p>This page holds many of my personal and professional projects for your viewing pleasure</p>
             </a>
         </div>
         <div class="pageLink">
+            <img src="/images/contact.png" alt="Image of a bubble saying contact me">
             <a href="/pages/contact.html">
                 <h3>Contact:</h3>
                 <p>This page holds an integrated method of messaging me as well as various links that you can reach me
                     at.
                 </p>
             </a>
-            <img src="" alt="">
         </div>
     </article>
+    <footer>
+        <p>@ David Madden 2025</p>
+    </footer>
 </body>
 
 </html>
