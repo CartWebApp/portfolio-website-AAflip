@@ -3,8 +3,10 @@ body{
     margin: 0;
     display: flex;
     flex-direction: column;
-    /* background-color: #01e9f8; */
+    background: linear-gradient( #cbbd93, #01e9f8, #00c9f2, #0056bd);
+    background-repeat: no-repeat;
     align-items: center;
+    height: 100vh;
 }
 
 #mainTitle{
@@ -36,6 +38,28 @@ hr{
 .portCard img{
     width: 25vw;
     /* height: 30vh/; */
+}
+
+#pagesTitle{
+    color: black;
+}
+
+.pageLink{
+    border: 2px solid black;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    display: flex;
+    background-color: #cbbd93bf;
+}
+
+.pageLink img{
+    max-width: 30vw;
+    max-height: 20vh;
+    height: 100%;
+}
+
+.pageLink a{
+    color: black;
+    text-decoration: none;
 }
 
 /* a{
@@ -113,7 +137,7 @@ h2 {
     margin-left: 1em;
     margin-right: 1em;
 }
-/*
+
 #emailForm{
     display: flex;
     flex-direction: column;
@@ -141,7 +165,7 @@ h2 {
 #contactPage h3{
     text-align: center;
 }
-*/
+
 .portCheck{
     position: absolute;
     /* width: 100%;
