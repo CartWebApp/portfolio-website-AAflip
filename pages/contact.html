@@ -7,7 +7,7 @@
     <title>David J.M Portfolio</title>
     <link rel="stylesheet" href="/app.css">
     <link rel="icon" href="/images/logo.png">
-    <script src="app.js"></script>
+    <script src="/app.js"></script>
 </head>
 
 <body id="contactPage">
@@ -18,11 +18,15 @@
                 <rect x="10" y="20" width="35" height="5" fill="black"></rect>
                 <rect x="10" y="30" width="35" height="5" fill="black"></rect>
             </svg>
-            <input type="checkbox" id="menuCheck">
+            <input type="checkbox" class="menuBoxes" id="menuCheck">
         </article>
         <article id="navigation">
+            <div id="menuIconOff">
+                <img id="menuImgOff" src="/images/transparent_X.png" alt="An exit button">
+                <input type="checkbox" class="menuBoxes" id="menuCheckOff">
+            </div>
+            <img id="logo" src="/images/logo.png" alt="My Logo">
             <div id="pages">
-                <img id="logo" src="/images/logo.png" alt="My Logo">
                 <a href="/index.html"><img src="/images/home.png" alt="Home logo">Home</a>
                 <a href="/pages/aboutme.html"><img src="/images/me.png" alt="Person logo">About Me</a>
                 <a href="/pages/resume.html"><img src="/images/resumelogo.png" alt="Resume Logo">My Resume</a>

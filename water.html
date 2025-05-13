@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html xmlns:fb="http://www.facebook.com/2008/fbml">
+	<head>
+		<style>
+
+			html {
+	  		overflow-x: hidden;
+			}
+			body {
+			  position: relative;
+				overflow-x: hidden;
+
+				background-color: #000;
+				color: #fff;
+				padding: 1em;
+				font-family: verdana;
+				font-size: 1em;
+			}
+
+			a {
+				color: #9adffd;
+			}
+
+			.holder {
+				/* max-width: 100%; */
+				width: 100%;
+			}
+
+			#waterHolder {
+				margin-bottom: 40px;
+			}
+
+			.text {
+				font-family: verdana;
+				font-size: 1em;
+			}
+
+			#imageChooser {
+				width:100%;
+			}
+
+			#width, #height {
+				width: 3em;
+			}
+
+			.buttons {
+				margin-left: 1em;
+			}
+
+			.slider {
+				margin:.6em 0 1em 0;
+			}
+
+			input[type='text']{
+				font-size: 1em;
+			}
+		</style>
+
+		<script src="watercanvas.js"></script>
+
+		<script>
+			var pixel 		= create2DArray(createRadialCanvas(2,2));
+			var raindrop 	= create2DArray(createRadialCanvas(4,4));
+			var finger 		= create2DArray(createRadialCanvas(14,14));
+
+			var width = window.innerWidth;
+			var height = window.innerHeight;
+
+			function init(){
+				// Init the basic components
+				var waterModel = new WaterModel(width, height, {
+												resolution:1.0,
+												interpolate:false,
+												damping:0.985,
+												clipping:5,
+												evolveThreshold:0.05,
+												maxFps:10000,
+												showStats: true
+											});
+				var waterCanvas = new WaterCanvas(width, height, "waterHolder", waterModel, {
+												backgroundImageUrl:null,
+												lightRefraction:9.0,
+												lightReflection:0.1,
+												showStats: true
+											});
+
+
+				// Init some utils
+				var rainMaker = new RainMaker(width, height, waterModel, raindrop);
+				rainMaker.setRaindropsPerSecond(1);
+				enableMouseInteraction(waterModel, "waterHolder");
+			}
+
+		</script>
+
+	</head>
+	<body onload="init();">
+		<div class="holder">
+			<div id="waterHolder"></div>
+
+			<!-- <div id="buttons">
+				<select id="imageChooser" class="text ui-widget-content ui-corner-all">
+				  <option value="">Choose image...</option>
+				  <option value="images/art-tiles.jpg">art-tiles.jpg</option>
+					<option value="images/autumn-leafs.jpg">autumn-leafs.jpg</option>
+					<option value="images/stones.jpg">stones.jpg</option>
+					<option value="images/bathroom-floor.jpg">bathroom-floor.jpg</option>
+					<option value="images/blue-tiles.jpg">blue-tiles.jpg</option>
+					<option value="images/circular-metal.jpg">circular-metal.jpg</option>
+					<option value="images/fish.jpg">fish.jpg</option>
+					<option value="images/floor.jpg">floor.jpg</option>
+					<option value="images/hardwood.jpg">hardwood.jpg</option>
+					<option value="images/koi-fish.jpg">koi-fish.jpg</option>
+					<option value="images/leafs.jpg">leafs.jpg</option>
+					<option value="images/mosaic.jpg">mosaic.jpg</option>
+					<option value="images/shape-tiles.jpg">shape-tiles.jpg</option>
+					<option value="images/color-stones.jpg">color-stones.jpg</option>
+					<option value="images/tiles.jpg">tiles.jpg</option>
+				</select>
+				<br /><br />
+
+				Width: <input type="text" id="width" class="text ui-widget-content ui-corner-all"/> px,
+				Height: <input type="text" id="height" class="text ui-widget-content ui-corner-all"/> px
+				<button id="setImage">Set size</button>
+				<br /><br />
+
+
+				Raindrops per second: <span id="rainSpeedLabel"></span>
+				<div class="slider" id="rainSpeed"></div>
+
+				Raindrop pressure: <span id="rainPressureLabel"></span>
+				<div class="slider" id="rainPressure"></div>
+
+				Max. water renders per second (FPS Water): <span id="fpsWaterLabel"></span>
+				<div class="slider" id="fpsWater"></div>
+
+				Refraction of light in water: <span id="refractionLabel"></span>
+				<div class="slider" id="refraction"></div>
+
+				Reflection of light on water ripples: <span id="reflectionLabel"></span>
+				<div class="slider" id="reflection"></div>
+
+				Damping of waterwaves: <span id="dampingLabel"></span>
+				<div class="slider" id="damping"></div>
+
+				Resolution of watermodel (height above water): <span id="resolutionLabel"></span>
+				<div class="slider" id="resolution"></div>
+				<input type="checkbox" id="interpolate" /><label for="interpolate">Interpolate</label>
+			</div> -->
+		</div>
+
+
+		<!-- <script type="text/javascript">
+		  var _gaq = _gaq || [];
+		  _gaq.push(['_setAccount', 'UA-792529-7']);
+		  _gaq.push(['_trackPageview']);
+
+		  (function() {
+			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		  })();
+		</script> -->
+
+	</body>
+</html>

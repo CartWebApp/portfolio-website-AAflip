@@ -6,7 +6,8 @@ body {
     background: linear-gradient(#01e9f8, #00c9f2, #0056bd);
     background-repeat: no-repeat;
     align-items: center;
-    height: 100%;
+    /* height: 100%; */
+    min-height: 100vh;
 }
 
 #mainTitle {
@@ -16,10 +17,12 @@ body {
 
 #menuIcon {
     cursor: pointer;
+    margin: 10px;
 }
 
 hr {
-    width: 98vw
+    width: 80vw;
+    border:1px solid black;
 }
 
 .portCard {
@@ -33,6 +36,16 @@ hr {
 .portCard>div {
     display: flex;
     flex-direction: column;
+    margin-left: 1em;
+    margin-right: 1em;
+}
+
+.portCard h2{
+    margin-bottom: 0;
+}
+
+.portCard p{
+    size: 50px;
 }
 
 .portCard img {
@@ -84,6 +97,7 @@ hr {
     border-radius: 6px;
     text-align: center;
     padding: 1em;
+    width: 70vw;
 }
 
 #aboutPage ul{
@@ -115,13 +129,37 @@ hr {
 }
 
 nav{
+    position: sticky;
+    height: 100%;
+    top: 0;
     align-self: flex-start;
+}
+
+#menuIconOff{
+    position: absolute;
+    right: 20px;
+    top: 20px;
+}
+
+#menuImgOff{
+    width: 40px;
+}
+
+.menuBoxes{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    opacity: 0;
+    cursor: pointer;
 }
 
 #navigation{
     position: absolute;
-    background-color: #cbbd93bf;
-    /* border: 2px solid black; */
+    background-color: #cbbd93fe;
     border-left: none;
     border-top-right-radius: 6px;
     border-bottom-right-radius: 6px;
@@ -131,9 +169,11 @@ nav{
     display: flex;
     flex-direction: column;
     width: 0;
+    max-width: 60vw;
+    min-height: 100vh;
     overflow: hidden;
     height: fit-content;
-    transition:all .3s ease;
+    transition:all .5s ease;
 }
 
 #menuCheck:checked + #navigation{
@@ -145,6 +185,7 @@ nav{
     flex-direction: column;
     margin-top: 3em;
     margin-bottom: 3em;
+    margin-left: 2em;
 }
 
 #pages a{
@@ -152,6 +193,7 @@ nav{
     align-items: center;
     color: black;
     text-decoration: none;
+    font-size: 20px;
 }
 
 #pages img{
@@ -172,6 +214,8 @@ nav{
 #links{
     display: flex;
     flex-direction: column;
+    margin-left: 2.65em;
+    margin-top: 5em;
 }
 
 #links a{
@@ -179,23 +223,19 @@ nav{
     align-items: center;
     color: black;
     text-decoration: none;
+    margin-bottom: 1em;
+    font-size: 20px;
 }
 
 #links img{
-    height: 40px;
+    height: 50px;
+    margin-right: 0.5em;
 }
 
 #linkedin{
-    border-radius: 5px;
+    border-radius: 10px;
 }
 
-/* ai starts here */
-/* body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 20px;
-     background-color: #f4f4f4; 
-}
 .container {
     max-width: 800px;
     margin: auto;
@@ -204,17 +244,17 @@ nav{
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
-h1 {
+.container h1 {
     text-align: center;
     color: #333;
 }
-h2 {
+.container h2 {
     color: #555;
 }
-.section {
+.container .section {
     margin-bottom: 20px;
 }
-.contact-info {
+.container .contact-info {
     text-align: center;
     margin-bottom: 20px;
 }
@@ -227,8 +267,7 @@ h2 {
     margin: 5px 0;
     padding: 10px;
     border-radius: 4px;
-} */
-/* ai ends here */
+} 
 
 .expandCard {
     border: 2px solid black;
@@ -237,10 +276,9 @@ h2 {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     max-width: 50%;
     margin-top: 5em;
-    /* width: 25%;
-    height: 32vh; 
-    max-height: 50px; */
-    /* overflow: hidden; */
+    background-color: #cbbd93bf;
+    width: 100%;
+    padding-bottom: 1.5em;
 }
 
 .expandCard:last-of-type {
@@ -252,6 +290,7 @@ h2 {
     border-radius: 8px;
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
+    max-height: 50vh;
     margin: 0;
 }
 
@@ -263,13 +302,11 @@ h2 {
 #emailForm {
     display: flex;
     flex-direction: column;
-    /* width: 30%; */
-    /* margin: 1em; */
 }
 
 #emailForm>textarea {
-    /* width: 99.3%; */
-    max-width: 600px;
+    max-width: 99.6%;
+    min-width: 99.6%;
     height: fit-content;
     min-height: 30vh;
 }
@@ -284,11 +321,6 @@ h2 {
     background-color: #cbbd93bf;
 }
 
-#portPage a > div{
-    /* margin-left: 1em; */
-    /* margin-right: 1em; */
-}
-
 #emailForm>#submit {
     width: 20%;
     align-self: flex-end;
@@ -298,12 +330,12 @@ h2 {
 
 #contactPage {
     justify-content: center;
-    align-items: center;
     height: 100vh;
 }
 
-footer{
-
+#contactPage nav{
+    position: absolute;
+    top: 0;
 }
 
 .portCheck {
@@ -327,44 +359,3 @@ footer{
 #mainPage div:last-child {
     margin-bottom: 5em;
 }
-/*
-.expandCard{
-    max-height:52px;
-    overflow:hidden;
-    transition:all .3s ease;
-}
-
-#rainiestBox{
-    max-height:52px;
-    overflow:hidden;
-    transition:all .3s ease;
-}
-
-#rainiestBox:checked + .expandCard{
-    max-height: 512px;
-} */
-
-
-/* #expend {
-     display:none;   
-  }
-  
-  #expend + .smalldesc {
-    max-height:52px;
-    overflow:hidden;
-    transition:all .3s ease;
-  }
-  
-  #expend:checked + .smalldesc {
-    max-height:250px;  
-  }
-  
-  label {
-    color:blue;
-    text-decoration:underline;
-    cursor:pointer;
-  }
-  
-  label:hover {
-    text-decoration:none;  
-  } */
