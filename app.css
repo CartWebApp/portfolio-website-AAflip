@@ -3,7 +3,7 @@ body {
     margin: 0;
     display: flex;
     flex-direction: column;
-    background: linear-gradient(#cbbd93, #01e9f8, #00c9f2, #0056bd);
+    background: linear-gradient(#01e9f8, #00c9f2, #0056bd);
     background-repeat: no-repeat;
     align-items: center;
     height: 100%;
@@ -52,6 +52,53 @@ hr {
     border-radius: 5px;
 }
 
+#techstuff{
+    display: flex;
+    gap: 2em;
+    align-items: flex-end;
+    text-align: center;
+}
+
+#aboutPage{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 3em;
+    margin-top: 0;
+    background-color: #cbbd93bf;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    max-width: 70%;
+    border-radius: 6px;
+    padding-bottom: 2em;
+}
+
+#aboutPage p{
+    margin-top: 0;
+    margin-left: 5em;
+    margin-right: 4em;
+}
+
+#contactSubPage{
+    background-color: #cbbd93bf;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    border-radius: 6px;
+    text-align: center;
+    padding: 1em;
+}
+
+#aboutPage ul{
+    margin: 0;
+    margin-bottom: 1em;
+}
+
+#techstuff img{
+    width: 60px;
+}
+
+#aboutPage hr{
+    width: 85%;
+}
+
 .pageLink img {
     max-width: 20vw;
     max-height: 20vh;
@@ -83,7 +130,7 @@ nav{
     padding-top: 5em;
     display: flex;
     flex-direction: column;
-    /* width: 0; */
+    width: 0;
     overflow: hidden;
     height: fit-content;
     transition:all .3s ease;
@@ -216,19 +263,37 @@ h2 {
 #emailForm {
     display: flex;
     flex-direction: column;
-    width: 30%;
+    /* width: 30%; */
+    /* margin: 1em; */
 }
 
 #emailForm>textarea {
-    width: 99.3%;
-    max-width: 99.3%;
+    /* width: 99.3%; */
+    max-width: 600px;
     height: fit-content;
     min-height: 30vh;
+}
+
+#portPage{
+    height: fit-content;
+}
+
+#portPage a{
+    color: black;
+    text-decoration: none;
+    background-color: #cbbd93bf;
+}
+
+#portPage a > div{
+    /* margin-left: 1em; */
+    /* margin-right: 1em; */
 }
 
 #emailForm>#submit {
     width: 20%;
     align-self: flex-end;
+    padding: 0.5em 1em;
+
 }
 
 #contactPage {
@@ -237,8 +302,8 @@ h2 {
     height: 100vh;
 }
 
-#contactPage h3 {
-    text-align: center;
+footer{
+
 }
 
 .portCheck {
