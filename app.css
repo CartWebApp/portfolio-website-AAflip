@@ -20,6 +20,25 @@ body {
     margin: 10px;
 }
 
+.arrow{
+    position: absolute;
+    top: 50%;
+    z-index: -1;
+    /* transform: translate(0, 50%); */
+}
+
+.plus1{
+    z-index: 0;
+}
+
+#arrowL{
+    left: 10%;
+}
+
+#arrowR{
+    right: 10%;
+}
+
 hr {
     width: 80vw;
     border:1px solid black;

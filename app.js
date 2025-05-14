@@ -12,6 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }else{
             navBar.style.width = '0';
         }
+        document.getElementById('arrowL').style.display = 'none';
     });
 
     closeBox.addEventListener('change', () => {
@@ -20,6 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
             closeBox.checked = false;
             navBar.style.width = '0';
         }
+        document.getElementById('arrowL').style.display = 'flex';
     });
 });
 
@@ -39,7 +41,7 @@ function moveCarouselStory(project) {
                 </li>
             </ul>
         </article>`;
-        ocument.getElementById('arrowR').setAttribute('onclick', 'moveCarouselStory("story")');
+        document.getElementById('arrowR').setAttribute('onclick', 'moveCarouselStory("story")');
         document.getElementById('arrowL').setAttribute('onclick', 'moveCarouselStory("story")');
     }else{
         document.getElementById('project').innerHTML = `
