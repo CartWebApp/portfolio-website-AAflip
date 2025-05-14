@@ -69,7 +69,7 @@
 			function init(){
 				// Init the basic components
 				var waterModel = new WaterModel(width, height, {
-												resolution:1.0,
+												resolution:10.0,
 												interpolate:false,
 												damping:0.985,
 												clipping:5,
@@ -78,7 +78,7 @@
 												showStats: true
 											});
 				var waterCanvas = new WaterCanvas(width, height, "waterHolder", waterModel, {
-												backgroundImageUrl:null,
+												backgroundImageUrl:'images/modeling.jpg',
 												lightRefraction:9.0,
 												lightReflection:0.1,
 												showStats: true
@@ -87,7 +87,7 @@
 
 				// Init some utils
 				var rainMaker = new RainMaker(width, height, waterModel, raindrop);
-				rainMaker.setRaindropsPerSecond(1);
+				rainMaker.setRaindropsPerSecond(5);
 				enableMouseInteraction(waterModel, "waterHolder");
 			}
 
