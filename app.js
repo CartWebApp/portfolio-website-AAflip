@@ -1,5 +1,9 @@
+//some variables
+
 let codeProjects = [''];
 let currentProject = ''
+
+//event listeners
 
 document.addEventListener('DOMContentLoaded', () => {
     let checkBox = document.getElementById('menuCheck');
@@ -7,26 +11,30 @@ document.addEventListener('DOMContentLoaded', () => {
     let closeBox = document.getElementById('menuCheckOff');
 
     checkBox.addEventListener('change', () => {
-        if(checkBox.checked){
+        if (checkBox.checked) {
             navBar.style.width = '500px';
-        }else{
+        } else {
             navBar.style.width = '0';
         }
         document.getElementById('arrowL').style.display = 'none';
     });
 
     closeBox.addEventListener('change', () => {
-        if(checkBox.checked){
+        if (checkBox.checked) {
             checkBox.checked = false;
             closeBox.checked = false;
             navBar.style.width = '0';
         }
         document.getElementById('arrowL').style.display = 'flex';
     });
+
+    setup();
 });
 
+//carousel stuff
+
 function moveCarouselStory(project) {
-    if(project == '1984'){
+    if (project == '1984') {
         document.getElementById('project').innerHTML = `
         <img src="/images/1984.jpg" id="projectImage" alt="Photo of the Book 1984">
         <h2 id="projectTitle">1984 Essay</h2>
@@ -43,7 +51,7 @@ function moveCarouselStory(project) {
         </article>`;
         document.getElementById('arrowR').setAttribute('onclick', 'moveCarouselStory("story")');
         document.getElementById('arrowL').setAttribute('onclick', 'moveCarouselStory("story")');
-    }else{
+    } else {
         document.getElementById('project').innerHTML = `
         <img src="/images/game.png" alt="Photo of the Adventure game project">
         <h2>Adventure Game Story</h2>
@@ -64,8 +72,8 @@ function moveCarouselStory(project) {
     }
 }
 
-function moveCarouselCode(project){
-    if(project == 'rain'){
+function moveCarouselCode(project) {
+    if (project == 'rain') {
         document.getElementById('project').innerHTML = `
         <img src="/images/rainiest.png" alt="Photo of the website Make-It-Rainiest">
         <h2>Make-it-Rainiest</h2>
@@ -86,7 +94,7 @@ function moveCarouselCode(project){
         </article>`;
         document.getElementById('arrowR').setAttribute('onclick', 'moveCarouselCode("trion")');
         document.getElementById('arrowL').setAttribute('onclick', 'moveCarouselCode("eecu")');
-    }else if(project == 'trion'){
+    } else if (project == 'trion') {
         document.getElementById('project').innerHTML = `
         <img src="/images/trion.png" alt="Photo of the Trion Supercars website proposal">
         <h2>Trion Supercars</h2>
@@ -108,7 +116,7 @@ function moveCarouselCode(project){
         </article>`;
         document.getElementById('arrowR').setAttribute('onclick', 'moveCarouselCode("advent")');
         document.getElementById('arrowL').setAttribute('onclick', 'moveCarouselCode("rain")');
-    }else if(project == 'advent'){
+    } else if (project == 'advent') {
         document.getElementById('project').innerHTML = `
         <img src="/images/game.png" alt="Photo of the Adventure game project">
         <h2>Adventure Video Game</h2>
@@ -130,7 +138,7 @@ function moveCarouselCode(project){
         </article>`;
         document.getElementById('arrowR').setAttribute('onclick', 'moveCarouselCode("eecu")');
         document.getElementById('arrowL').setAttribute('onclick', 'moveCarouselCode("trion")');
-    }else if(project == 'eecu'){
+    } else if (project == 'eecu') {
         document.getElementById('project').innerHTML = `
         <img src="/images/budget.png" alt="Photo of the EECU budget calculator">
         <h2>EECU Budget Calculator</h2>

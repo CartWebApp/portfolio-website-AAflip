@@ -1,63 +1,7 @@
 <!DOCTYPE html>
 <html xmlns:fb="http://www.facebook.com/2008/fbml">
 	<head>
-		<style>
-
-			html {
-	  		overflow-x: hidden;
-			}
-			body {
-			  position: relative;
-				overflow-x: hidden;
-
-				background-color: #000;
-				color: #fff;
-				padding: 1em;
-				font-family: verdana;
-				font-size: 1em;
-			}
-
-			a {
-				color: #9adffd;
-			}
-
-			.holder {
-				/* max-width: 100%; */
-				width: 100%;
-			}
-
-			#waterHolder {
-				margin-bottom: 40px;
-			}
-
-			.text {
-				font-family: verdana;
-				font-size: 1em;
-			}
-
-			#imageChooser {
-				width:100%;
-			}
-
-			#width, #height {
-				width: 3em;
-			}
-
-			.buttons {
-				margin-left: 1em;
-			}
-
-			.slider {
-				margin:.6em 0 1em 0;
-			}
-
-			input[type='text']{
-				font-size: 1em;
-			}
-		</style>
-
 		<script src="watercanvas.js"></script>
-
 		<script>
 			var pixel 		= create2DArray(createRadialCanvas(2,2));
 			var raindrop 	= create2DArray(createRadialCanvas(4,4));
@@ -69,7 +13,7 @@
 			function init(){
 				// Init the basic components
 				var waterModel = new WaterModel(width, height, {
-												resolution:2.0,
+												resolution:15.0,
 												interpolate:false,
 												damping:0.985,
 												clipping:5,
@@ -88,11 +32,9 @@
 				// Init some utils
 				var rainMaker = new RainMaker(width, height, waterModel, raindrop);
 				rainMaker.setRaindropsPerSecond(5);
-				enableMouseInteraction(waterModel, "waterHolder");
+				// enableMouseInteraction(waterModel, "waterHolder");
 			}
-
 		</script>
-
 	</head>
 	<body onload="init();">
 		<div class="holder">

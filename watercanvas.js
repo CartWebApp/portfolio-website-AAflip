@@ -672,7 +672,7 @@ RainMaker.prototype.setRainMaxPressure = function(rainMaxPressure){
  * Enables mouse interactivity by adding event listeners to the given documentElement and
  * using the mouse coordinates to 'touch' the water.
  */
-function enableMouseInteraction(waterModel, documentElement){		
+ function enableMouseInteraction(waterModel, documentElement){		
 	var mouseDown = false;
 	
 	var canvasHolder = document.getElementById(documentElement);
@@ -699,7 +699,7 @@ function enableMouseInteraction(waterModel, documentElement){
 /**
  * Creates a canvas with a radial gradient from white in the center to black on the outside.
  */
-function createRadialCanvas(width, height){
+ function createRadialCanvas(width, height){
 	// Create a canvas
 	var pointerCanvas = document.createElement('canvas');  
 	pointerCanvas.setAttribute('width', width);  
@@ -728,7 +728,7 @@ function createRadialCanvas(width, height){
  * 		[0.5, 1.0, 0.5]
  * 	];
  */
-function create2DArray(canvas){
+ function create2DArray(canvas){
 	var width = canvas.width;
 	var height = canvas.height;
 
@@ -774,3 +774,37 @@ window.requestAnimFrame = (function(){
 				window.setTimeout(callback, 1000 / 60);
 		  };
 })();
+
+
+var pixel = create2DArray(createRadialCanvas(2, 2));
+        var raindrop = create2DArray(createRadialCanvas(4, 4));
+        var finger = create2DArray(createRadialCanvas(14, 14));
+
+        var width = window.innerWidth -10;
+        var height = window.innerHeight;
+
+        function init() {
+            // Init the basic components
+            var waterModel = new WaterModel(width, height, {
+                resolution: 10.0,
+                interpolate: true,
+                damping: 0.985,
+                clipping: 5,
+                evolveThreshold: 0.05,
+                maxFps: 10000,
+                showStats: true
+            });
+            var waterCanvas = new WaterCanvas(width, height, "waterHolder", waterModel, {
+                backgroundImageUrl: './images/modeling.jpg',
+                lightRefraction: 9.0,
+                lightReflection: 0.1,
+                showStats: true
+            });
+
+
+            // Init some utils
+            var rainMaker = new RainMaker(width, height, waterModel, raindrop);
+            rainMaker.setRaindropsPerSecond(5);
+            // enableMouseInteraction(waterModel, "waterHolder");
+        }
+        window.onload(init());

@@ -393,3 +393,15 @@ nav{
         width: 80%;
     }
 }
+
+#water{
+    position: sticky;
+    top: 0;
+    z-index: -10;
+}
+
+#waterHolder{
+    position: absolute;
+    top: 0;
+    left: -50vw;
+}
