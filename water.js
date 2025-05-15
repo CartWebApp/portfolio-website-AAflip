@@ -44,35 +44,33 @@ let perlin = {
 }
 perlin.seed();
 
-document.addEventListener('DOMContentLoaded', () => {
-    cnvsb = document.getElementById('b');
+function init(){
+    cnvsb = document.getElementById('waterHolder');
     ctxb = cnvsb.getContext('2d');
-    cnvsb.width = cnvsb.height = w;
+    cnvsb.height = document.body.clientHeight;    
+    cnvsb.width = document.body.clientWidth;
+    // reset();
+    // render();
     whileloop();
-});
+};
 
 async function whileloop(){
-    while(o){
-        console.log('h')
-        await sleep(180);
+    while(on){
         reset();
         render();
-        if(yes==true){
-            o =false;
-        }
+        await sleep(50);
     }
 }
 
 var cnvsb;
 var ctxb;
-var w = 700;
+var w = window.innerWidth;
 var gridSize, resolution;
-let o =true;
-let yes = false;
+let on = true;
 
 function reset() {
-    gridSize = 4;
-    resolution = 64;
+    gridSize = 9;
+    resolution = 100;
     let inpts = document.getElementsByTagName('input');
     for (let i = 0; i < inpts.length; i++) {
         inpts[i].disabled = false;
@@ -87,9 +85,9 @@ function render() {
 
     for (var y = 0; y < gridSize; y += gridSize / resolution) {
         for (var x = 0; x < gridSize; x += gridSize / resolution) {
-            var v = parseInt((perlin.get(x, y)/30) * 255)
-            ctxb.fillStyle = 'rgb( 255, 255, 255,'+ v +')';
-            ctxb.fillRect(x * (w / gridSize), y * (w / gridSize), pixSize, pixSize)
+            var v = parseInt((perlin.get(x, y)/20) * 255);
+            ctxb.fillStyle = 'rgb( 255, 255, 255, 0.'+ v +')';
+            ctxb.fillRect(x * (w / gridSize), y * (w / gridSize), pixSize, pixSize);
         }
     }
 }

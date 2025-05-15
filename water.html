@@ -13,7 +13,7 @@
 			function init(){
 				// Init the basic components
 				var waterModel = new WaterModel(width, height, {
-												resolution:15.0,
+												resolution:2.0,
 												interpolate:false,
 												damping:0.985,
 												clipping:5,
@@ -32,7 +32,7 @@
 				// Init some utils
 				var rainMaker = new RainMaker(width, height, waterModel, raindrop);
 				rainMaker.setRaindropsPerSecond(5);
-				// enableMouseInteraction(waterModel, "waterHolder");
+				enableMouseInteraction(waterModel, "waterHolder");
 			}
 		</script>
 	</head>

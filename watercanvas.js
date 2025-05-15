@@ -774,37 +774,3 @@ window.requestAnimFrame = (function(){
 				window.setTimeout(callback, 1000 / 60);
 		  };
 })();
-
-
-var pixel = create2DArray(createRadialCanvas(2, 2));
-        var raindrop = create2DArray(createRadialCanvas(4, 4));
-        var finger = create2DArray(createRadialCanvas(14, 14));
-
-        var width = window.innerWidth -10;
-        var height = window.innerHeight;
-
-        function init() {
-            // Init the basic components
-            var waterModel = new WaterModel(width, height, {
-                resolution: 10.0,
-                interpolate: true,
-                damping: 0.985,
-                clipping: 5,
-                evolveThreshold: 0.05,
-                maxFps: 10000,
-                showStats: true
-            });
-            var waterCanvas = new WaterCanvas(width, height, "waterHolder", waterModel, {
-                backgroundImageUrl: './images/modeling.jpg',
-                lightRefraction: 9.0,
-                lightReflection: 0.1,
-                showStats: true
-            });
-
-
-            // Init some utils
-            var rainMaker = new RainMaker(width, height, waterModel, raindrop);
-            rainMaker.setRaindropsPerSecond(5);
-            // enableMouseInteraction(waterModel, "waterHolder");
-        }
-        window.onload(init());

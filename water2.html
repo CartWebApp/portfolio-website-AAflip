@@ -3,7 +3,7 @@
 <head>
 </head>
 
-<body>
+<body onload="init()">
     <style>
         body{
             background-color: blue;
@@ -11,8 +11,8 @@
     </style>
     <div id='main'>
         <div id='content'>
-            <script src='./water.js'></script>
-            <canvas id='b'></canvas>
+            <script src='/water.js'></script>
+            <canvas id='waterHolder'></canvas>
             <input type='button' value='Regenerate' onclick='render();'></input>
         </div>
     </div>
