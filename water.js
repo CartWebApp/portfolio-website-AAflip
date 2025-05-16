@@ -56,6 +56,8 @@ function init(){
 
 async function whileloop(){
     while(on){
+        cnvsb.height = document.body.clientHeight;    
+        cnvsb.width = document.body.clientWidth;
         reset();
         render();
         await sleep(50);
